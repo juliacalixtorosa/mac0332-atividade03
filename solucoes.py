@@ -28,6 +28,10 @@ def cifra_de_cesar(texto: str, deslocamento: int) -> str:
         >>> cifra_de_cesar("Ataque ao Amanhecer!", 5) # caracteres não-ASCII permanecem inalterados
         'Fyfvzj ft Frfsmjhmjw!'
     """
+    if not isinstance(texto, str):
+        raise TypeError("O parâmetro 'texto' deve ser uma str")
+    if not isinstance(deslocamento, int):
+        raise TypeError("O parâmetro 'deslocamento' deve ser um int")
 
     desloc = deslocamento % 26  # mapeia pro intervalo [0, 25]
 
