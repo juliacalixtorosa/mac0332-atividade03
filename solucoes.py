@@ -23,10 +23,10 @@ def cifra_de_cesar(texto: str, deslocamento: int) -> str:
     Examples:
         >>> cifra_de_cesar("abc", 3)
         'cde'
-        >>> cifra_de_cesar("xyz", 3) 
+        >>> cifra_de_cesar("xyz", 3)
         'abc'
-        >>> cifra_de_cesar("Ataque ao Amanhecer!", 5) # caracteres não-ASCII permanecem inalterados
-        'Fyfvzj ft Frfsmjhmjw!'
+        >>> cifra_de_cesar("Ataque à Noite!", 5) # caracteres não-ASCII permanecem inalterados
+        'Fyfvzj à Stynj!'
     """
     if not isinstance(texto, str):
         raise TypeError("O parâmetro 'texto' deve ser uma str")
