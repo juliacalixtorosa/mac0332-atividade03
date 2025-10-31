@@ -15,10 +15,15 @@ def sao_anagramas(string1: str, string2: str) -> bool:
         True
         >>> sao_anagramas("hello", "world")
         False
+        >>> sao_anagramas("As  tro nomer", "MOon sTarEr")
+        True
     """
 
     if not isinstance(string1, str) or not isinstance(string2, str):
         raise ValueError("Ambos os argumentos devem ser strings.")
+    
+    string1 = string1.replace(" ", "").lower()
+    string2 = string2.replace(" ", "").lower()
     
     if len(string1) != len(string2):
         return False
@@ -35,3 +40,4 @@ def encontrar_maior_palavra(frase):
     # TODO: implementar a lógica
 
     pass
+
