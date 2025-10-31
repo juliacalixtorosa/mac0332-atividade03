@@ -1,4 +1,8 @@
 def sao_anagramas(string1: str, string2: str) -> bool:
+
+    if not isinstance(string1, str) or not isinstance(string2, str):
+        raise ValueError("Ambos os argumentos devem ser strings.")
+    
     if len(string1) != len(string2):
         return False
     sorted_string1 = sorted(string1)
@@ -14,3 +18,4 @@ def encontrar_maior_palavra(frase):
     # TODO: implementar a lógica
 
     pass
+
