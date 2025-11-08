@@ -8,7 +8,7 @@ def cifra_de_cesar(texto, deslocamento):
 
     pass
 
-def find_longest_word(sentence):
+def encontrar_maior_palavra(sentenca):
     """
     Encontra a palavra mais longa em uma sentença, ignorando pontuação.
     
@@ -17,44 +17,42 @@ def find_longest_word(sentence):
     Em caso de empate, retorna a primeira palavra encontrada com o comprimento máximo.
     
     Args:
-        sentence (str): A sentença a ser analisada.
+        sentenca (str): A sentença a ser analisada.
         
     Returns:
         str: A palavra mais longa sem pontuação, ou string vazia se não houver palavras válidas.
         
     Raises:
-        TypeError: Se o parâmetro sentence não for uma string.
+        TypeError: Se o parâmetro sentenca não for uma string.
         
     Examples:
-        >>> find_longest_word("O gato subiu no telhado!")
+        >>> encontrar_maior_palavra("O gato subiu no telhado!")
         'telhado'
-        >>> find_longest_word("Python é uma linguagem incrível.")
+        >>> encontrar_maior_palavra("Python é uma linguagem incrível.")
         'linguagem'
-        >>> find_longest_word("a, b, c!")
+        >>> encontrar_maior_palavra("a, b, c!")
         'a'
-        >>> find_longest_word("")
+        >>> encontrar_maior_palavra("")
         ''
     """
-    if not isinstance(sentence, str):
-        raise TypeError("O parâmetro 'sentence' deve ser uma string")
+    if not isinstance(sentenca, str):
+        raise TypeError("O parâmetro 'sentenca' deve ser uma string")
     
-    punctuation = {'.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '"', "'"}
+    pontuacao = {'.', ',', ';', ':', '!', '?', '(', ')', '[', ']', '{', '}', '"', "'"}
     
-    def clean_word(word):
+    def limpar_palavra(palavra):
         """Remove pontuação de uma palavra."""
-        return ''.join(char for char in word if char not in punctuation)
+        return ''.join(char for char in palavra if char not in pontuacao)
     
     # Divide a sentença em palavras e processa cada uma
-    words = sentence.split()
-    longest_word = ""
-    max_length = 0
+    palavras = sentenca.split()
+    maior_palavra = ""
+    maior_comp = 0
     
-    for word in words:
-        cleaned_word = clean_word(word)
-        if len(cleaned_word) > max_length:
-            max_length = len(cleaned_word)
-            longest_word = cleaned_word
+    for palavra in palavras:
+        palavra_limpa = limpar_palavra(palavra)
+        if len(palavra_limpa) > maior_comp:
+            maior_comp = len(palavra_limpa)
+            maior_palavra = palavra_limpa
     
-    return longest_word
-
-print(find_longest_word("O gato rato no !"))  # Exemplo de uso da função
+    return maior_palavra
